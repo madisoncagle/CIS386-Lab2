@@ -1,6 +1,20 @@
 #include <stdio.h>
+#include <math.h>
 
 // (1) Floating-point equality
+void compareFloats(double a, double b)
+{
+    printf("%f and %f\n", a, b);
+
+    if (a == b)
+    {
+        printf("The numbers are equal");
+    }
+    else
+    {
+        printf("The numbers are not equal");
+    }
+}
 
 // (2) Floating-point associativity
 
@@ -28,22 +42,10 @@ int main()
     // printf("Power of 2 simple: %d\n", isPowerOfTwoSimple(510));
     // printf("Power of 2 clever: %d\n", isPowerOfTwoClever(64));
 
-    float f1 = 1.6666666666;
-    float f2 = 3.3333333333;
+    double f1 = 3 * 0.3 + 0.1;
+    double f2 = 1.0;
 
-    float sum = f1 + f2;
-    float five = (float)5.0;
-
-    printf("%f + %f = %f\n", f1, f2, sum);
-
-    if (sum == five)
-    {
-        printf("equal\n");
-    }
-    else
-    {
-        printf("not equal\n");
-    }
+    compareFloats(f1, f2);
 
     return 0;
 }
