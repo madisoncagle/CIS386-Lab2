@@ -45,6 +45,34 @@ int isPowerOfTwoClever(unsigned int i)
 }
 
 // (4) Bit shifting
+int bsMultiply(unsigned int number, unsigned int powerOfTwo)
+{
+    int result = 0;
+
+    if (powerOfTwo > 64)
+    {
+        printf("Error. Untrustworthy result.\n");
+        return 0;
+    }
+
+    if (isPowerOfTwoClever(powerOfTwo))
+    {
+        while (powerOfTwo > 1)
+        {
+            number <<= 1;
+            powerOfTwo >>= 1;
+        }
+
+        result = number;
+        return result;
+    }
+    else
+    {
+        printf("%i is not a power of 2\n", powerOfTwo);
+    }
+
+    return 0;
+}
 
 int main()
 {
@@ -65,6 +93,12 @@ int main()
     printf("Power of 2 simple: %d\n", isPowerOfTwoSimple(510));
     printf("Power of 2 clever: %d\n", isPowerOfTwoClever(64));
     printf("\n");
+
+    printf("4. Bit shifting\n");
+    int i1 = 15;
+    int i2 = 32;
+    int product = bsMultiply(i1, i2);
+    printf("%i * %i = %i", i1, i2, product);
 
     return 0;
 }
